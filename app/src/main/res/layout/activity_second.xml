@@ -87,7 +87,7 @@
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="棚内4.5M:34.1℃"
+                android:text="棚内4.5M温度"
                 android:textColor="@color/textColor"/>
             <TextView
                 android:gravity="center"
