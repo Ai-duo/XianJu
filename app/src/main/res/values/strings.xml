@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppXianJu</string>
+    <dimen name="titleSize">15px</dimen>
+    <dimen name="firstTextSize">15px</dimen>
+    <dimen name="secondTextSize">12px</dimen>
+    <dimen name="thirdTextSize">10px</dimen>
+    <color name="textColor">#f00</color>
+</resources>
