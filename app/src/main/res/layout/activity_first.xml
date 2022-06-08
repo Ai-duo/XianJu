@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+       <variable
+           name="dmgd"
+           type="com.kd.appxianju.Dmgd" />
+        <variable
+            name="dmrd"
+            type="com.kd.appxianju.Dmrd" />
+        <variable
+            name="dm4d"
+            type="String" />
+        <variable
+            name="tf"
+            type="android.graphics.Typeface" />
     </data>
 
     <LinearLayout
@@ -19,28 +30,32 @@
             android:layout_weight="1">
 
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="温度:33℃"
+                android:text="@{dmgd.wd}"
+
                 android:textColor="@color/textColor"/>
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="CO2:440ppm"
+                android:text="@{`CO2:`+dm4d+`ppm`}"
                 android:textColor="@color/textColor"/>
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="光合:1223W²/M"
+                android:text="@{dmrd.gh}"
                 android:textColor="@color/textColor"/>
         </LinearLayout>
         <LinearLayout
@@ -50,28 +65,31 @@
             android:layout_weight="1">
 
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="相对湿度:55%"
+                android:text="@{dmgd.sd}"
                 android:textColor="@color/textColor"/>
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="总辐射:668W²/M"
+                android:text="@{dmrd.zfs}"
                 android:textColor="@color/textColor"/>
             <TextView
-                android:gravity="center"
+                app:setExtraTypeface="@{tf}"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="日照:1min"
+                android:text="@{dmrd.rzh}"
                 android:textColor="@color/textColor"/>
         </LinearLayout>
     </LinearLayout>

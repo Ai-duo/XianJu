@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="dmgd"
+            type="com.kd.appxianju.Dmgd" />
+        <variable
+            name="dmsd"
+            type="com.kd.appxianju.Dmsd" />
+        <variable
+            name="tf"
+            type="android.graphics.Typeface" />
     </data>
 
     <LinearLayout
@@ -19,52 +27,58 @@
             android:layout_weight="1">
 
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
                 android:text="地温"
-                android:textColor="@color/textColor"/>
+                android:textColor="#ff0"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="10CM:32.5℃"
+                android:text="@{dmgd.cm10w}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="20CM:32.7℃"
+                android:text="@{dmgd.cm20w}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="30CM:32.2℃"
+                android:text="@{dmgd.cm30w}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="40CM:32.8℃"
+                android:text="@{dmgd.cm40w}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="50CM:31.5℃"
+                android:text="@{dmgd.cm50w}"
                 android:textColor="@color/textColor"/>
 
         </LinearLayout>
@@ -75,52 +89,58 @@
             android:layout_weight="1">
 
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
                 android:text="土壤水分"
-                android:textColor="@color/textColor"/>
+                android:textColor="#ff0"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="10CM:16.9%"
+                android:text="@{dmsd.sf5}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="20CM:13.5%"
+                android:text="@{dmsd.sf10}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="30CM:4.7%"
+                android:text="@{dmsd.sf20}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="40CM:8.4%"
+                android:text="@{dmsd.sf30}"
                 android:textColor="@color/textColor"/>
             <TextView
+                app:setExtraTypeface="@{tf}"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
                 android:textSize="@dimen/firstTextSize"
-                android:text="50CM:11.6%"
+                android:text="@{dmsd.sf40}"
                 android:textColor="@color/textColor"/>
         </LinearLayout>
     </LinearLayout>

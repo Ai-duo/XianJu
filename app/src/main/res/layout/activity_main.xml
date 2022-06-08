@@ -7,6 +7,9 @@
      <variable
          name="time"
          type="String" />
+        <variable
+            name="tf"
+            type="android.graphics.Typeface" />
     </data>
 
     <LinearLayout
@@ -16,6 +19,7 @@
         android:layout_height="128px"
         tools:context=".MainActivity">
         <TextView
+            app:setExtraTypeface="@{tf}"
             android:id="@+id/time"
             android:gravity="center"
             android:layout_width="match_parent"
