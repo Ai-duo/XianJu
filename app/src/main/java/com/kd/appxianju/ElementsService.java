@@ -53,8 +53,8 @@ public class ElementsService extends Service {
         final String in1 ="DM4D K8953 2022-06-07 15:06 11111000000000000000000000000000000 424 425 1503 423 1502 *34\n" +
                 "*FC\n" +
                 "T";
-        final String in2 ="DMRD K8953 2022-06-07 15:09 111100000000000000000001000000000000000000000011111 276 16 363 1501 1 893 50 996 1502 9 *E7\n" +
-                "*C4\n" +
+        final String in2 ="DMRD K8953 2022-06-07 15:10 111100000000000000000001000000000000000000000011111 250 17 363 1501 1 920 55 996 1502 10 *FC\n" +
+                "*E6\n" +
                 "T";
         final String in3 ="DM5D K8953 2022-06-07 15:06 111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 369 370 1501 369 1505 365 365 1501 364 1504 364 365 1501 364 1504 370 372 1501 370 1504 374 376 1501 374 1506 374 377 1501 373 1505 421 421 1502 420 1501 352 356 1501 352 1506 337 339 1501 337 1505 *52\n" +
                 "*1A\n" +
@@ -64,7 +64,7 @@ public class ElementsService extends Service {
                 "T";
        //getDM1D(in1);
        // getDMGD(in);
-       // getDMRD(in2);
+       getDMRD(in2);
        // getDM5D(in3);
        // getDMSD(in4);
       /*  new Thread(new Runnable() {
@@ -620,7 +620,7 @@ public class ElementsService extends Service {
             if (chars1[j] == '1') {
                 count++;
             }
-            if (j == 0||j == 50||j == 36||j == 46 ) {
+            if (j == 0||j == 50||j == 46 ) {
                 dmrdIndex.add(count - 1);
             }
         }
@@ -753,7 +753,7 @@ public class ElementsService extends Service {
             }
             try {
                 if (infoss[4].charAt(50) == '1') {
-                    String syd1 = infoss[qc + dmrdIndex.get(1)];
+                    String syd1 = infoss[qc + dmrdIndex.get(2)];
                     Log.i(DMRD, "zwx:" + syd1);
 
                     if (!isNum(syd1)) {
@@ -765,23 +765,10 @@ public class ElementsService extends Service {
             } catch (Exception e) {
                 Log.i(DMRD, "解析风速时出错");
             }
-            try {
-                if (infoss[4].charAt(34) == '1') {
-                    String syd1 = infoss[qc + dmrdIndex.get(2)];
-                    Log.i(DMRD, "zwx:" + syd1);
 
-                    if (!isNum(syd1)) {
-                        //fs = "";
-                    } else {
-                        zwx = Float.parseFloat(syd1) / 10 + "";
-                    }
-                }
-            } catch (Exception e) {
-                Log.i(DMRD, "解析风速时出错");
-            }
             try {
                 if (infoss[4].charAt(46) == '1') {
-                    String syd1 = infoss[qc + dmrdIndex.get(3)];
+                    String syd1 = infoss[qc + dmrdIndex.get(1)];
                     Log.i(DMRD, "zwx:" + syd1);
 
                     if (!isNum(syd1)) {
@@ -796,7 +783,7 @@ public class ElementsService extends Service {
 
             // LiveDataBus.getInstance().setElements(new Elements("语溪小学气象站", date, time, wd, max_wd, min_wd, sd, min_sd, fx, fs, js, qy, njd));
           //  EventBus.getDefault().post(new Dmrd(zfs,zwx));
-            LiveDataBus.get().with("dmrd").postValue(new Dmrd(zfs,zwx,rzh,gh) );
+            LiveDataBus.get().with("dmrd").postValue(new Dmrd(zfs,rzh,gh) );
         }
 
     }
